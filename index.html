@@ -122,14 +122,14 @@
                 if (!Array.isArray(data) || data.length === 0) throw new Error("No data found");
 
                 const firstRow = data[0];
-                if (!firstRow['Sales model'] || !firstRow['Xchange+ Value']) {
+                if (!firstRow['Sales model'] || !firstRow['Estimate up to Value']) {
                     throw new Error("Missing 'Sales model' or 'Estimate up to Value' column");
                 }
 
                 allModels = {};
                 data.forEach(row => {
                     const model = row['Sales model']?.toString().trim();
-                    const value = parseFloat(row['Xchange+ Value']?.toString().replace(/[^\d.-]/g, ''));
+                    const value = parseFloat(row['Estimate up to Value']?.toString().replace(/[^\d.-]/g, ''));
                     if (model && !isNaN(value)) {
                         allModels[model] = value;
                     }
@@ -238,5 +238,6 @@
     </script>
 </body>
 </html>
+
 
 
