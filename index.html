@@ -191,7 +191,7 @@
             }
 
             if (allModels[model] !== undefined) {
-                resultDiv.innerHTML = `Xchange+ Value: <strong>RM ${allModels[model]}</strong>`;
+                resultDiv.innerHTML = `Estimate up to Value: <strong>RM ${allModels[model]}</strong>`;
             } else {
                 const similar = Object.keys(allModels).filter(m => 
                     m.toUpperCase().includes(model.toUpperCase()));
@@ -238,4 +238,5 @@
     </script>
 </body>
 </html>
+
 
